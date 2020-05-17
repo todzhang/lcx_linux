@@ -1,8 +1,9 @@
 // the configured options and settings for Tutorial
-#define LCX_VERSION_MAJOR @LCX_VERSION_MAJOR@
-#define LCX_VERSION_MINOR @LCX_VERSION_MINOR@
+#define LCX_VERSION_MAJOR @LCX_VERSION_MAJOR @
+#define LCX_VERSION_MINOR @LCX_VERSION_MINOR @
 
 #define VERSION "@LCX_VERSION@"
 
-#cmakedefine GAPING_SECURITY_HOLE 
+#cmakedefine GAPING_SECURITY_HOLE
 #cmakedefine TELNET
+//#cmakedefine WIN32
