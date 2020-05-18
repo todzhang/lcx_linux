@@ -169,13 +169,13 @@ argsFinished:;
         break;
 
     case SSOCKSD:
-        // ssocksd(globalArgs);
+        ssocksd(globalArgs);
         break;
     case RCSOCKS:
-        // rcsocks(globalArgs);
+        rcsocks(globalArgs);
         break;
     case RSSOCKS:
-        // rssocks(globalArgs);
+        rssocks(globalArgs);
         break;
     case NETCAT:
         // netcat(argc, argv);

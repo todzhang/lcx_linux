@@ -20,6 +20,11 @@
 #include <getopt.h>
 #include "LcxConfig.h"
 
+#include "../lib/libsocks/output-util.h"
+#include "../lib/libsocks/client.h"
+#include "../lib/libsocks/socks5-client.h"
+#include "../lib/libsocks/socks5-server.h"
+
 #define TIMEOUT 300
 #define MAXSIZE 20480
 #define HOSTLEN 40

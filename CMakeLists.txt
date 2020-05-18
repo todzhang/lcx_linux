@@ -39,12 +39,25 @@ configure_file (
 # so that we will find TutorialConfig.h
 include_directories("${PROJECT_BINARY_DIR}")
 
-file(GLOB_RECURSE LCX_SOURCES "src/*.c")
+file(GLOB LCX_SOURCES src/*.c)
+file(GLOB_RECURSE LIB_SOURCES lib/*.c)
+file(GLOB_RECURSE LCX_HEADERS src/*.h lib/*.h)
+
+set (LCX_INCLUDE_DIRS "")
+foreach (_headerFile ${LCX_HEADERS})
+    get_filename_component(_dir ${_headerFile} PATH)
+    list (APPEND LCX_INCLUDE_DIRS ${_dir})
+endforeach()
+list(REMOVE_DUPLICATES LCX_INCLUDE_DIRS)
+
+MESSAGE(STATUS "LCX_INCLUDE_DIRS is ${LCX_INCLUDE_DIRS}")
+MESSAGE(STATUS "LCX_SOURCES is ${LCX_SOURCES}")
 
 # librarys
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
 
 # add the executable
-add_executable(lcx ${LCX_SOURCES})
+add_executable (lcx ${LCX_SOURCES} ${LIB_SOURCES})
+target_include_directories(lcx PRIVATE ${LCX_INCLUDE_DIRS})
 target_link_libraries (lcx Threads::Threads)
