@@ -178,7 +178,7 @@ argsFinished:;
         rssocks(globalArgs);
         break;
     case NETCAT:
-        // netcat(argc, argv);
+        netcat(argc, argv);
         break;
     default:
         helpme();
