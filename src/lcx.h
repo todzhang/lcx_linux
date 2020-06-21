@@ -45,13 +45,13 @@ struct transocket
 
 typedef enum _METHOD
 {
-	LISTEN = 1,
+	LISTEN = 10,
 	TRAN,
 	SLAVE,
-	SSOCKSD,
+	SSOCKSD = 20,
 	RCSOCKS,
 	RSSOCKS,
-	NETCAT
+	NETCAT = 30
 } METHOD;
 
 #define STR_LISTEN "listen"
@@ -82,6 +82,8 @@ typedef struct _GlobalArgs
 
 	int ssl;
 } GlobalArgs;
+
+extern GlobalArgs globalArgs;
 
 // define function
 void ver();
